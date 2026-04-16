@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Berserk2dle</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <h1>Berserk2dle</h1>
+    <p>Guess the Berserk 2 character of the day. Every player gets the same daily target.</p>
+
+    <div class="controls">
+      <input id="guessInput" list="characterList" placeholder="Enter a character name" autocomplete="off">
+      <datalist id="characterList"></datalist>
+      <button id="guessButton" type="button">Guess</button>
+    </div>
+
+    <p id="status" class="status"></p>
+
+    <div class="legend">
+      <span class="legend-item"><span class="swatch exact"></span> Exact match</span>
+      <span class="legend-item"><span class="swatch partial"></span> Partial match</span>
+      <span class="legend-item"><span class="swatch none"></span> No match</span>
+      <span class="legend-item">Size / Debut arrows point toward the target</span>
+    </div>
+
+    <div id="board" class="board"></div>
+
+    <p class="note">This version is intentionally minimal and focuses on the game logic first.</p>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+:root {
+  --green: #6aaa64;
+  --yellow: #c9b458;
+  --gray: #d3d6da;
+  --border: #b8b8b8;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f7f7f7;
+  color: #111;
+}
+
+main {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-size: 2rem;
+}
+
+p {
+  margin: 0 0 12px;
+}
+
+.controls {
+  display: flex;
+  gap: 8px;
+  margin: 16px 0 18px;
+  flex-wrap: wrap;
+}
+
+input, button {
+  font: inherit;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+input {
+  flex: 1 1 280px;
+  min-width: 240px;
+}
+
+button {
+  cursor: pointer;
+  background: #fff;
+}
+
+button:hover {
+  background: #f0f0f0;
+}
+
+.status {
+  min-height: 24px;
+  margin-bottom: 10px;
+}
+
+.legend {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+  font-size: 0.95rem;
+}
+
+.legend-item {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.swatch {
+  width: 18px;
+  height: 18px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+
+.board {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.board-row {
+  display: grid;
+  grid-template-columns: minmax(170px, 1.2fr) repeat(6, minmax(110px, 1fr));
+  gap: 8px;
+}
+
+.cell {
+  border: 1px solid var(--border);
+  background: #fff;
+  border-radius: 6px;
+  padding: 10px 8px;
+  min-height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.25;
+  font-size: 0.95rem;
+  word-break: break-word;
+}
+
+.header .cell {
+  font-weight: 700;
+  background: #ececec;
+}
+
+.exact {
+  background: var(--green);
+  color: #fff;
+  border-color: var(--green);
+}
+
+.partial {
+  background: var(--yellow);
+  color: #fff;
+  border-color: var(--yellow);
+}
+
+.none {
+  background: var(--gray);
+  color: #111;
+  border-color: var(--gray);
+}
+
+.arrow {
+  display: inline-block;
+  margin-left: 6px;
+  font-weight: 700;
+}
+
+.note {
+  margin-top: 20px;
+  color: #444;
+  font-size: 0.92rem;
+}
+
+@media (max-width: 920px) {
+  .board-row {
+    grid-template-columns: repeat(7, minmax(120px, 1fr));
+    overflow-x: auto;
+    padding-bottom: 2px;
+  }
+}
