@@ -1,7 +1,7 @@
 :root {
-  --green: #6aaa64;
-  --yellow: #c9b458;
-  --gray: #d3d6da;
+  --green: #8ac783;
+  --yellow: #dbc96d;
+  --red: #dd6666;
   --border: #b8b8b8;
 }
 
@@ -128,9 +128,9 @@ button:hover {
 }
 
 .none {
-  background: var(--gray);
-  color: #111;
-  border-color: var(--gray);
+  background: var(--red);
+  color: #fff;
+  border-color: var(--red);
 }
 
 .arrow {

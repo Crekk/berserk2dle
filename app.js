@@ -197,7 +197,8 @@
       row.appendChild(cell);
     });
 
-    boardEl.appendChild(row);
+    const firstGuessRow = boardEl.children[1];
+    boardEl.insertBefore(row, firstGuessRow || null);
   }
 
   function compareTrait(guessValue, targetValue, trait) {
