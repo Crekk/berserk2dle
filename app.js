@@ -36,8 +36,8 @@
   const modeStorageKey = "berserk2dle-mode";
   const playUrl = "https://crekkers.net/berserk2dle";
   const gameModes = ["classic", "splash"];
-  const maxSplashBlur = 26;
-  const splashBlurStep = 5;
+  const maxSplashBlur = 52;
+  const splashBlurStep = 10;
   let activeSuggestionIndex = -1;
   let currentSuggestions = [];
 

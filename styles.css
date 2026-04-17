@@ -293,12 +293,14 @@ button:hover {
   justify-content: center;
   gap: 10px;
   text-align: center;
+  font-size: 1.08rem;
+  font-weight: 600;
 }
 
 .character-image {
-  width: 72px;
-  height: 72px;
-  flex: 0 0 72px;
+  width: 88px;
+  height: 88px;
+  flex: 0 0 88px;
   border-radius: 6px;
   object-fit: cover;
 }

@@ -2,7 +2,6 @@ window.BERSERK2DLE_DATA = {
   "meta": {
     "title": "Berserk2dle",
     "seedEpochUtc": "2026-01-01",
-    "sourceWorkbook": "Berk2dle.xlsx",
     "characterCount": 55
   },
   "rankings": {
