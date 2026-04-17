@@ -10,6 +10,7 @@ Minimal daily character guessing game built from the uploaded spreadsheet.
 - `data.js` — same JSON embedded for easy local loading
 
 ## How it works
+- Put character image files in `img/` using lowercase character names, like `img/crewmate.png`. You can override this with an `image` value like `img/guts-alt.png`.
 - Picks one character per UTC day.
 - Every player gets the same daily answer.
 - Guess rows compare:

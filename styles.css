@@ -36,7 +36,7 @@ p {
   flex-wrap: wrap;
 }
 
-input, button {
+input, button, select {
   font: inherit;
   padding: 10px 12px;
   border: 1px solid var(--border);
@@ -44,8 +44,65 @@ input, button {
 }
 
 input {
-  flex: 1 1 280px;
+  width: 100%;
   min-width: 240px;
+}
+
+.guess-search {
+  position: relative;
+  flex: 1 1 320px;
+  min-width: 260px;
+}
+
+.suggestions {
+  position: absolute;
+  z-index: 10;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  max-height: 360px;
+  overflow-y: auto;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.14);
+}
+
+.suggestions.hidden {
+  display: none;
+}
+
+.suggestion-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 10px 12px;
+  border: 0;
+  border-bottom: 1px solid #e7e7e7;
+  border-radius: 0;
+  background: #fff;
+  color: #111;
+  text-align: left;
+}
+
+.suggestion-item:last-child {
+  border-bottom: 0;
+}
+
+.suggestion-item:hover,
+.suggestion-item.active {
+  background: #f3f3f3;
+}
+
+.suggestion-image {
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  border-radius: 6px;
+  object-fit: cover;
 }
 
 button {
@@ -55,6 +112,20 @@ button {
 
 button:hover {
   background: #f0f0f0;
+}
+
+.dev-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: -6px 0 18px;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.dev-controls select {
+  min-width: 220px;
+  background: #fff;
 }
 
 .status {
@@ -87,20 +158,24 @@ button:hover {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  perspective: 900px;
 }
 
 .board-row {
   display: grid;
-  grid-template-columns: minmax(170px, 1.2fr) repeat(6, minmax(110px, 1fr));
+  grid-template-columns: repeat(7, 148px);
   gap: 8px;
+  width: max-content;
 }
 
 .cell {
   border: 1px solid var(--border);
   background: #fff;
   border-radius: 6px;
-  padding: 10px 8px;
-  min-height: 58px;
+  padding: 8px;
+  min-height: 148px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -108,11 +183,50 @@ button:hover {
   line-height: 1.25;
   font-size: 0.95rem;
   word-break: break-word;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+.cell.flip-in {
+  animation: flip-in 900ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  animation-delay: var(--flip-delay, 0ms);
+}
+
+@keyframes flip-in {
+  0% {
+    opacity: 0;
+    transform: rotateY(-100deg);
+  }
+
+  45% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotateY(0deg);
+  }
+}
+
+.guess-name {
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.character-image {
+  width: 72px;
+  height: 72px;
+  flex: 0 0 72px;
+  border-radius: 6px;
+  object-fit: cover;
 }
 
 .header .cell {
   font-weight: 700;
   background: #ececec;
+  min-height: 52px;
 }
 
 .exact {
@@ -146,9 +260,13 @@ button:hover {
 }
 
 @media (max-width: 920px) {
-  .board-row {
-    grid-template-columns: repeat(7, minmax(120px, 1fr));
-    overflow-x: auto;
-    padding-bottom: 2px;
+  .board {
+    padding-bottom: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cell.flip-in {
+    animation: none;
   }
 }

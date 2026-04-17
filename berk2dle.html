@@ -12,9 +12,18 @@
     <p>Guess the Berserk 2 character of the day!</p>
 
     <div class="controls">
-      <input id="guessInput" list="characterList" placeholder="Enter a character name" autocomplete="off">
-      <datalist id="characterList"></datalist>
+      <div class="guess-search">
+        <input id="guessInput" placeholder="Enter a character name" autocomplete="off">
+        <div id="suggestions" class="suggestions hidden"></div>
+      </div>
       <button id="guessButton" type="button">Guess</button>
+    </div>
+
+    <div class="dev-controls">
+      <label for="targetOverride">Dev target</label>
+      <select id="targetOverride">
+        <option value="">Random daily target</option>
+      </select>
     </div>
 
     <p id="status" class="status"></p>
@@ -27,8 +36,6 @@
     </div>
 
     <div id="board" class="board"></div>
-
-    <p class="note">This version is intentionally minimal and focuses on the game logic first.</p>
   </main>
 
   <script src="data.js"></script>
