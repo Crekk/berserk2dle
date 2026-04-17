@@ -14,13 +14,30 @@
   ];
 
   const boardEl = document.getElementById("board");
+  const classicLegendEl = document.getElementById("classicLegend");
+  const splashPanelEl = document.getElementById("splashPanel");
+  const splashArtEl = document.getElementById("splashArt");
+  const splashHintEl = document.getElementById("splashHint");
+  const splashGuessesEl = document.getElementById("splashGuesses");
   const inputEl = document.getElementById("guessInput");
   const buttonEl = document.getElementById("guessButton");
+  const clearCacheButtonEl = document.getElementById("clearCacheButton");
   const targetOverrideEl = document.getElementById("targetOverride");
+  const puzzleMetaEl = document.getElementById("puzzleMeta");
   const statusEl = document.getElementById("status");
   const suggestionsEl = document.getElementById("suggestions");
+  const winModalEl = document.getElementById("winModal");
+  const closeWinModalEl = document.getElementById("closeWinModal");
+  const winSummaryEl = document.getElementById("winSummary");
+  const shareMessageEl = document.getElementById("shareMessage");
+  const copyShareButtonEl = document.getElementById("copyShareButton");
   const storageKeyPrefix = "berserk2dle-state-";
   const targetOverrideKey = "berserk2dle-target-override";
+  const modeStorageKey = "berserk2dle-mode";
+  const playUrl = "https://crekkers.net/berserk2dle";
+  const gameModes = ["classic", "splash"];
+  const maxSplashBlur = 26;
+  const splashBlurStep = 5;
   let activeSuggestionIndex = -1;
   let currentSuggestions = [];
 
@@ -29,18 +46,33 @@
     charactersByName.set(normalizeName(character.name), character);
   });
 
-  const dateKey = getUtcDateKey();
+  const dateKey = getWarsawDateKey();
+  const gameMode = getGameMode();
   const target = getTargetCharacter();
 
-  const storageKey = storageKeyPrefix + dateKey + "-" + normalizeName(target.name);
+  const storageKey = getModeStorageKey(gameMode);
   const state = loadState();
 
+  renderModeTabs();
   renderTargetOverride();
-  renderHeader();
+  renderMode();
   restoreGuesses();
+  updatePuzzleMeta();
+  setInterval(updatePuzzleMeta, 1000);
 
+  document.querySelectorAll(".mode-tab").forEach((button) => {
+    button.addEventListener("click", () => setGameMode(button.dataset.mode));
+  });
   buttonEl.addEventListener("click", submitGuess);
+  clearCacheButtonEl.addEventListener("click", clearDevCache);
   targetOverrideEl.addEventListener("change", setTargetOverride);
+  closeWinModalEl.addEventListener("click", hideWinModal);
+  copyShareButtonEl.addEventListener("click", copyShareMessage);
+  winModalEl.addEventListener("click", (event) => {
+    if (event.target === winModalEl) {
+      hideWinModal();
+    }
+  });
   inputEl.addEventListener("input", renderSuggestions);
   inputEl.addEventListener("focus", renderSuggestions);
   inputEl.addEventListener("keydown", (event) => {
@@ -77,12 +109,6 @@
     }
   });
 
-  if (state.completed) {
-    setStatus("Solved. The daily character was " + target.name + ".", false);
-    disableInput();
-  } else {
-    setStatus(getPuzzleStatus(), false);
-  }
 
   function getTargetCharacter() {
     const override = getTargetOverride();
@@ -91,6 +117,20 @@
     }
 
     return getRandomDailyCharacter();
+  }
+
+  function getGameMode() {
+    const savedMode = localStorage.getItem(modeStorageKey);
+    return savedMode === "splash" ? "splash" : "classic";
+  }
+
+  function setGameMode(mode) {
+    if (mode !== "classic" && mode !== "splash") {
+      return;
+    }
+
+    localStorage.setItem(modeStorageKey, mode);
+    window.location.reload();
   }
 
   function getTargetOverride() {
@@ -114,18 +154,109 @@
     return hash >>> 0;
   }
 
-  function getUtcDateKey() {
-    const now = new Date();
+  function getWarsawDateKey() {
+    const parts = new Intl.DateTimeFormat("en-CA", {
+      timeZone: "Europe/Warsaw",
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit"
+    }).formatToParts(new Date());
+
+    const values = Object.fromEntries(parts.map((part) => [part.type, part.value]));
+    return values.year + "-" + values.month + "-" + values.day;
+  }
+
+  function getWarsawParts(date) {
+    const parts = new Intl.DateTimeFormat("en-CA", {
+      timeZone: "Europe/Warsaw",
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      hourCycle: "h23"
+    }).formatToParts(date);
+
+    return Object.fromEntries(parts.map((part) => [part.type, part.value]));
+  }
+
+  function getTimeZoneOffsetMs(date, timeZone) {
+    const parts = new Intl.DateTimeFormat("en-CA", {
+      timeZone: timeZone,
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      hourCycle: "h23"
+    }).formatToParts(date);
+    const values = Object.fromEntries(parts.map((part) => [part.type, part.value]));
+    const zonedAsUtc = Date.UTC(
+      Number(values.year),
+      Number(values.month) - 1,
+      Number(values.day),
+      Number(values.hour),
+      Number(values.minute),
+      Number(values.second)
+    );
+
+    return zonedAsUtc - date.getTime();
+  }
+
+  function getWarsawMidnightUtcMs(warsawDateKey) {
+    const parts = warsawDateKey.split("-").map(Number);
+    const localMidnightUtc = Date.UTC(parts[0], parts[1] - 1, parts[2], 0, 0, 0);
+    let utcGuess = localMidnightUtc;
+
+    for (let index = 0; index < 3; index += 1) {
+      utcGuess = localMidnightUtc - getTimeZoneOffsetMs(new Date(utcGuess), "Europe/Warsaw");
+    }
+
+    return utcGuess;
+  }
+
+  function getNextWarsawDateKey() {
+    const parts = dateKey.split("-").map(Number);
+    const nextDayNoonUtc = new Date(Date.UTC(parts[0], parts[1] - 1, parts[2] + 1, 12, 0, 0));
+    const values = getWarsawParts(nextDayNoonUtc);
+    return values.year + "-" + values.month + "-" + values.day;
+  }
+
+  function getCountdownToWarsawMidnight() {
+    const nextMidnightUtcMs = getWarsawMidnightUtcMs(getNextWarsawDateKey());
+    return Math.max(nextMidnightUtcMs - Date.now(), 0);
+  }
+
+  function formatCountdown(milliseconds) {
+    const totalSeconds = Math.floor(milliseconds / 1000);
+    const hours = Math.floor(totalSeconds / 3600);
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+    const seconds = totalSeconds % 60;
+
     return [
-      now.getUTCFullYear(),
-      String(now.getUTCMonth() + 1).padStart(2, "0"),
-      String(now.getUTCDate()).padStart(2, "0")
-    ].join("-");
+      String(hours).padStart(2, "0"),
+      String(minutes).padStart(2, "0"),
+      String(seconds).padStart(2, "0")
+    ].join(":");
   }
 
   function loadState() {
+    return loadStateFromKey(storageKey);
+  }
+
+  function loadModeState(mode) {
+    if (mode === gameMode) {
+      return state;
+    }
+
+    return loadStateFromKey(getModeStorageKey(mode));
+  }
+
+  function loadStateFromKey(key) {
     try {
-      const raw = localStorage.getItem(storageKey);
+      const raw = localStorage.getItem(key);
       if (!raw) {
         return { guesses: [], completed: false };
       }
@@ -139,8 +270,28 @@
     }
   }
 
+  function getModeStorageKey(mode) {
+    return storageKeyPrefix + mode + "-" + dateKey + "-" + normalizeName(target.name);
+  }
+
   function saveState() {
     localStorage.setItem(storageKey, JSON.stringify(state));
+  }
+
+  function clearDevCache() {
+    Object.keys(localStorage)
+      .filter((key) => key.startsWith(storageKeyPrefix))
+      .forEach((key) => localStorage.removeItem(key));
+    localStorage.removeItem(targetOverrideKey);
+    localStorage.removeItem(modeStorageKey);
+
+    window.location.reload();
+  }
+
+  function renderModeTabs() {
+    document.querySelectorAll(".mode-tab").forEach((button) => {
+      button.classList.toggle("active", button.dataset.mode === gameMode);
+    });
   }
 
   function renderTargetOverride() {
@@ -167,13 +318,45 @@
 
   function getPuzzleStatus() {
     if (getTargetOverride()) {
-      return "Dev target override: " + target.name;
+      return getModeLabel() + " dev target override: " + target.name;
     }
 
-    return "Random daily puzzle: " + dateKey + " UTC";
+    return getModeLabel() + " random daily puzzle: " + dateKey;
+  }
+
+  function updatePuzzleMeta() {
+    if (getWarsawDateKey() !== dateKey) {
+      window.location.reload();
+      return;
+    }
+
+    puzzleMetaEl.textContent = getPuzzleStatus() + " · resets in " + formatCountdown(getCountdownToWarsawMidnight());
+  }
+
+  function getModeLabel() {
+    return gameMode === "splash" ? "Splash" : "Classic";
+  }
+
+  function renderMode() {
+    const isSplash = gameMode === "splash";
+    boardEl.classList.toggle("hidden", isSplash);
+    classicLegendEl.classList.toggle("hidden", isSplash);
+    splashPanelEl.classList.toggle("hidden", !isSplash);
+
+    if (isSplash) {
+      renderSplashPanel();
+    } else {
+      renderHeader();
+    }
   }
 
   function restoreGuesses() {
+    if (gameMode === "splash") {
+      renderSplashGuesses();
+      updateSplashReveal();
+      return;
+    }
+
     state.guesses.forEach((name) => {
       const character = charactersByName.get(normalizeName(name));
       if (character) {
@@ -204,18 +387,34 @@
       return;
     }
 
-    appendGuessRow(character, true);
+    if (gameMode === "classic") {
+      appendGuessRow(character, true);
+    }
+
     state.guesses.push(character.name);
 
     if (normalizeName(character.name) === normalizeName(target.name)) {
       state.completed = true;
+      saveState();
+      const solvedMessage = getModeSolvedMessage(gameMode, state);
       setStatus(
-        "Correct. " + target.name + " was the answer. Solved in " + state.guesses.length + " guess" + (state.guesses.length === 1 ? "" : "es") + ".",
+        "Correct. " + target.name + " was the answer. " + solvedMessage + ".",
         false
       );
       disableInput();
+      if (gameMode === "splash") {
+        updateSplashReveal();
+        renderSplashGuesses();
+      }
+      if (areAllModesCompleted()) {
+        showWinModal();
+      }
     } else {
       setStatus("Not correct yet.", false);
+      if (gameMode === "splash") {
+        updateSplashReveal();
+        renderSplashGuesses();
+      }
     }
 
     saveState();
@@ -228,6 +427,59 @@
     inputEl.disabled = true;
     buttonEl.disabled = true;
     hideSuggestions();
+  }
+
+  function getModeSolvedMessage(mode, modeState) {
+    return getModeDisplayName(mode) + " solved in " + modeState.guesses.length + " guess" + (modeState.guesses.length === 1 ? "" : "es");
+  }
+
+  function getModeDisplayName(mode) {
+    return mode === "splash" ? "Splash" : "Classic";
+  }
+
+  function areAllModesCompleted() {
+    return gameModes.every((mode) => loadModeState(mode).completed);
+  }
+
+  function getAllModesSolvedMessage() {
+    return gameModes
+      .map((mode) => getModeSolvedMessage(mode, loadModeState(mode)))
+      .join("\n");
+  }
+
+  function showWinModal() {
+    const solvedMessage = getAllModesSolvedMessage();
+    const message =
+      "Berserk2dle " + dateKey + "\n" +
+      solvedMessage + "\n" +
+      "Play on " + playUrl;
+
+    winSummaryEl.textContent = "All modes complete.";
+    shareMessageEl.value = message;
+    copyShareButtonEl.textContent = "Copy result";
+    winModalEl.classList.remove("hidden");
+  }
+
+  function hideWinModal() {
+    winModalEl.classList.add("hidden");
+  }
+
+  async function copyShareMessage() {
+    const message = shareMessageEl.value;
+
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(message);
+      } else {
+        shareMessageEl.focus();
+        shareMessageEl.select();
+        document.execCommand("copy");
+      }
+
+      copyShareButtonEl.textContent = "Copied";
+    } catch (error) {
+      copyShareButtonEl.textContent = "Copy failed";
+    }
   }
 
   function renderSuggestions() {
@@ -310,6 +562,35 @@
 
   function isAlreadyGuessed(character) {
     return state.guesses.some((name) => normalizeName(name) === normalizeName(character.name));
+  }
+
+  function renderSplashPanel() {
+    splashArtEl.src = getCharacterImagePath(target);
+    splashArtEl.alt = "Splash art";
+    renderSplashGuesses();
+    updateSplashReveal();
+  }
+
+  function updateSplashReveal() {
+    if (gameMode !== "splash") {
+      return;
+    }
+
+    const blur = state.completed ? 0 : Math.max(maxSplashBlur - (state.guesses.length * splashBlurStep), 0);
+    splashArtEl.style.filter = "blur(" + blur + "px)";
+    splashHintEl.textContent = state.completed
+      ? "Revealed: " + target.name
+      : "Blur: " + blur + "px";
+  }
+
+  function renderSplashGuesses() {
+    splashGuessesEl.replaceChildren();
+    state.guesses.forEach((name) => {
+      const item = document.createElement("div");
+      item.className = "splash-guess";
+      item.textContent = name;
+      splashGuessesEl.prepend(item);
+    });
   }
 
   function renderHeader() {

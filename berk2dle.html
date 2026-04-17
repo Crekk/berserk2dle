@@ -8,8 +8,12 @@
 </head>
 <body>
   <main>
-    <h1>Berserk2dle</h1>
-    <p>Guess the Berserk 2 character of the day!</p>
+    <img class="logo" src="img/berserk2dle.png" alt="Berserk2dle">
+
+    <div class="mode-tabs" aria-label="Game mode">
+      <button class="mode-tab" type="button" data-mode="classic">Classic</button>
+      <button class="mode-tab" type="button" data-mode="splash">Splash</button>
+    </div>
 
     <div class="controls">
       <div class="guess-search">
@@ -17,6 +21,7 @@
         <div id="suggestions" class="suggestions hidden"></div>
       </div>
       <button id="guessButton" type="button">Guess</button>
+      <button id="clearCacheButton" class="dev-button" type="button">Clear dev cache</button>
     </div>
 
     <div class="dev-controls">
@@ -26,17 +31,34 @@
       </select>
     </div>
 
-    <p id="status" class="status"></p>
+    <p id="puzzleMeta" class="puzzle-meta"></p>
 
-    <div class="legend">
+    <div id="classicLegend" class="legend">
       <span class="legend-item"><span class="swatch exact"></span> Exact match</span>
       <span class="legend-item"><span class="swatch partial"></span> Partial match</span>
       <span class="legend-item"><span class="swatch none"></span> No match</span>
-      <span class="legend-item">Size / Debut arrows point toward the target</span>
+    </div>
+
+    <div id="splashPanel" class="splash-panel hidden">
+      <div class="splash-art-wrap">
+        <img id="splashArt" class="splash-art" alt="Splash art">
+      </div>
+      <p id="splashHint" class="splash-hint"></p>
+      <div id="splashGuesses" class="splash-guesses"></div>
     </div>
 
     <div id="board" class="board"></div>
   </main>
+
+  <div id="winModal" class="modal-backdrop hidden">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="winTitle">
+      <button id="closeWinModal" class="modal-close" type="button" aria-label="Close">x</button>
+      <h2 id="winTitle">You got it</h2>
+      <p id="winSummary"></p>
+      <textarea id="shareMessage" readonly></textarea>
+      <button id="copyShareButton" type="button">Copy result</button>
+    </div>
+  </div>
 
   <script src="data.js"></script>
   <script src="app.js"></script>
