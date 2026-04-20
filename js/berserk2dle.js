@@ -48,7 +48,7 @@
 
   const dateKey = getWarsawDateKey();
   const gameMode = getGameMode();
-  const target = getTargetCharacter();
+  const target = getTargetCharacter(gameMode);
 
   const storageKey = getModeStorageKey(gameMode);
   const state = loadState();
@@ -110,13 +110,13 @@
   });
 
 
-  function getTargetCharacter() {
+  function getTargetCharacter(mode) {
     const override = getTargetOverride();
     if (override) {
       return override;
     }
 
-    return getRandomDailyCharacter();
+    return getRandomDailyCharacter(mode);
   }
 
   function getGameMode() {
@@ -138,10 +138,20 @@
     return overrideName ? charactersByName.get(normalizeName(overrideName)) : null;
   }
 
-  function getRandomDailyCharacter() {
-    const seed = DATA.meta.seedEpochUtc + "-" + dateKey;
-    const index = hashSeed(seed) % CHARACTERS.length;
+  function getRandomDailyCharacter(mode) {
+    const index = getDailyCharacterIndex(mode);
     return CHARACTERS[index];
+  }
+
+  function getDailyCharacterIndex(mode) {
+    const seed = DATA.meta.seedEpochUtc + "-" + dateKey + "-" + mode;
+    const index = hashSeed(seed) % CHARACTERS.length;
+
+    if (mode === "splash" && CHARACTERS.length > 1 && index === getDailyCharacterIndex("classic")) {
+      return (index + 1) % CHARACTERS.length;
+    }
+
+    return index;
   }
 
   function hashSeed(seed) {
@@ -271,7 +281,8 @@
   }
 
   function getModeStorageKey(mode) {
-    return storageKeyPrefix + mode + "-" + dateKey + "-" + normalizeName(target.name);
+    const modeTarget = getTargetCharacter(mode);
+    return storageKeyPrefix + mode + "-" + dateKey + "-" + normalizeName(modeTarget.name);
   }
 
   function saveState() {

@@ -455,7 +455,7 @@ window.BERSERK2DLE_DATA = {
       "affiliation": "None",
       "role": "Ally",
       "size": "Average",
-      "debut": "Idk",
+      "debut": "The Mainland Arc",
       "combatStyle": "None"
     },
     {

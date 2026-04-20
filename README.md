@@ -10,7 +10,7 @@ Minimal daily character guessing game built from the uploaded spreadsheet.
 
 ## How it works
 - Put character image files in `img/` using lowercase character names, like `img/crewmate.png`. You can override this with an `image` value like `img/guts-alt.png`.
-- Picks one character per day at midnight Warsaw time.
+- Picks separate Classic and Splash characters per day at midnight Warsaw time.
 - Every player gets the same daily answer.
 - Guess rows compare:
   - Species

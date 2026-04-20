@@ -37,6 +37,7 @@ p {
   gap: 8px;
   margin: 16px 0 18px;
   flex-wrap: wrap;
+  width: 1085px;
 }
 
 .mode-tabs {
