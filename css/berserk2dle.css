@@ -9,12 +9,16 @@
 
 body {
   margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background: #f7f7f7;
   color: #111;
 }
 
 main {
+  flex: 1 0 auto;
   max-width: 1180px;
   margin: 0 auto;
   padding: 24px 16px 48px;
@@ -402,4 +406,53 @@ button:hover {
   .cell.flip-in {
     animation: none;
   }
+}
+
+.app-footer {
+  flex-shrink: 0;
+  margin-top: 56px;
+  padding: 22px 0 26px;
+  border-top: 1px solid #d8d8d8;
+  background: #eeeeee;
+  color: #444;
+  font-size: 0.92rem;
+}
+
+.app-footer .page-frame {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.app-footer p {
+  margin: 0 0 8px;
+  line-height: 1.45;
+}
+
+.app-footer p:last-child {
+  margin-bottom: 0;
+}
+
+.app-footer a {
+  color: #111;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: #bdbdbd;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.app-footer a:visited {
+  color: #111;
+}
+
+.app-footer a:hover {
+  color: #8f2525;
+  text-decoration-color: #8f2525;
+}
+
+.app-footer a:focus-visible {
+  outline: 2px solid #111;
+  outline-offset: 3px;
+  border-radius: 4px;
 }
