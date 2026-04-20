@@ -389,7 +389,7 @@
 
     const character = charactersByName.get(normalizeName(guessText));
     if (!character) {
-      setStatus("That character is not in the current roster.", true);
+      setStatus("Please enter a valid character name", true);
       return;
     }
 
