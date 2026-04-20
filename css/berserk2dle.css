@@ -176,6 +176,11 @@ button:hover {
   margin-bottom: 10px;
 }
 
+.result-button {
+  display: block;
+  margin: 0 auto 16px;
+}
+
 .legend {
   display: flex;
   gap: 14px;

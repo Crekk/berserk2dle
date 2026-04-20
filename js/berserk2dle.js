@@ -25,6 +25,7 @@
   const targetOverrideEl = document.getElementById("targetOverride");
   const puzzleMetaEl = document.getElementById("puzzleMeta");
   const statusEl = document.getElementById("status");
+  const viewShareButtonEl = document.getElementById("viewShareButton");
   const suggestionsEl = document.getElementById("suggestions");
   const winModalEl = document.getElementById("winModal");
   const closeWinModalEl = document.getElementById("closeWinModal");
@@ -64,6 +65,7 @@
     button.addEventListener("click", () => setGameMode(button.dataset.mode));
   });
   buttonEl.addEventListener("click", submitGuess);
+  viewShareButtonEl.addEventListener("click", showWinModal);
   clearCacheButtonEl.addEventListener("click", clearDevCache);
   targetOverrideEl.addEventListener("change", setTargetOverride);
   closeWinModalEl.addEventListener("click", hideWinModal);
@@ -365,6 +367,7 @@
     if (gameMode === "splash") {
       renderSplashGuesses();
       updateSplashReveal();
+      renderShareButton();
       return;
     }
 
@@ -374,6 +377,7 @@
         appendGuessRow(character, false);
       }
     });
+    renderShareButton();
   }
 
   function submitGuess() {
@@ -419,6 +423,7 @@
       }
       if (areAllModesCompleted()) {
         showWinModal();
+        renderShareButton();
       }
     } else {
       setStatus("Not correct yet.", false);
@@ -441,7 +446,7 @@
   }
 
   function getModeSolvedMessage(mode, modeState) {
-    return getModeDisplayName(mode) + " solved in " + modeState.guesses.length + " guess" + (modeState.guesses.length === 1 ? "" : "es");
+    return getModeDisplayName(mode) + " solved in " + modeState.guesses.length + " guess" + (modeState.guesses.length === 1 ? "" : "es") + "!";
   }
 
   function getModeDisplayName(mode) {
@@ -458,15 +463,22 @@
       .join("\n");
   }
 
-  function showWinModal() {
+  function getShareMessage() {
     const solvedMessage = getAllModesSolvedMessage();
-    const message =
-      "Berserk2dle " + dateKey + "\n" +
+    return (
+      "**Berserk2dle Summary**: " + dateKey + "\n" +
       solvedMessage + "\n" +
-      "Play on " + playUrl;
+      "Play on " + playUrl 
+    );
+  }
 
+  function renderShareButton() {
+    viewShareButtonEl.classList.toggle("hidden", !areAllModesCompleted());
+  }
+
+  function showWinModal() {
     winSummaryEl.textContent = "All modes complete.";
-    shareMessageEl.value = message;
+    shareMessageEl.value = getShareMessage();
     copyShareButtonEl.textContent = "Copy result";
     winModalEl.classList.remove("hidden");
   }
