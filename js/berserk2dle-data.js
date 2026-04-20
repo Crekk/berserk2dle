@@ -23,7 +23,7 @@ window.BERSERK2DLE_DATA = {
       "The Mainland Arc": 4,
       "Morty Festival Arc": 5,
       "Love Square Arc": 6,
-      "Moth Cooking Arc": 7,
+      "Clash of Bugs Arc": 7,
       "Donofist Arc": 8,
       "Chungling Arc": 9,
       "Storm the Capitol Arc": 10,
@@ -329,7 +329,7 @@ window.BERSERK2DLE_DATA = {
       "affiliation": "Moth Lab",
       "role": "Minor Character",
       "size": "Small",
-      "debut": "Moth Cooking Arc",
+      "debut": "Clash of Bugs Arc",
       "combatStyle": "None"
     },
     {
@@ -338,7 +338,7 @@ window.BERSERK2DLE_DATA = {
       "affiliation": "Moth Lab",
       "role": "Minor Character",
       "size": "Small",
-      "debut": "Moth Cooking Arc",
+      "debut": "Clash of Bugs Arc",
       "combatStyle": "None"
     },
     {
@@ -347,7 +347,7 @@ window.BERSERK2DLE_DATA = {
       "affiliation": "Moth Lab",
       "role": "Minor Character",
       "size": "Average",
-      "debut": "Moth Cooking Arc",
+      "debut": "Clash of Bugs Arc",
       "combatStyle": "None"
     },
     {
