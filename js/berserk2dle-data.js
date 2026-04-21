@@ -553,7 +553,7 @@ window.BERSERK2DLE_DATA = {
       "name": "The Soy Bears",
       "species": "Bear",
       "affiliation": "The Bears",
-      "role": "Antagonist",
+      "role": "Minor Antagonist",
       "size": "Large",
       "debut": "The Piss Bear: a Berserk 2 Side Story",
       "combatStyle": "Melee"
