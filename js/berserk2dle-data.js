@@ -17,6 +17,7 @@ window.BERSERK2DLE_DATA = {
       "Massive": 9
     },
     "debut": {
+      "The Piss Bear: a Berserk 2 Side Story": 0,
       "Prologue": 1,
       "School Shooting Arc": 2,
       "Impostor Arc": 3,
@@ -284,8 +285,8 @@ window.BERSERK2DLE_DATA = {
       "affiliation": "None",
       "role": "Minor Character",
       "size": "Small",
-      "debut": "School Shooting Arc",
-      "combatStyle": "Pokemon Moves"
+      "debut": "The Piss Bear: a Berserk 2 Side Story",
+      "combatStyle": "Pokemon Moves / Pissing"
     },
     {
       "name": "Big Chungus",
@@ -362,7 +363,7 @@ window.BERSERK2DLE_DATA = {
     {
       "name": "The Dreadnought",
       "species": "Machine",
-      "affiliation": "Chaos",
+      "affiliation": "Chaos / Politics",
       "role": "Minor Antagonist",
       "size": "Huge",
       "debut": "Chaos Arc",
@@ -371,7 +372,7 @@ window.BERSERK2DLE_DATA = {
     {
       "name": "Sakura Matou",
       "species": "Human",
-      "affiliation": "Chaos",
+      "affiliation": "Chaos / Politics",
       "role": "Minor Antagonist",
       "size": "Average",
       "debut": "Chaos Arc",
@@ -529,6 +530,33 @@ window.BERSERK2DLE_DATA = {
       "size": "Small",
       "debut": "Love Square Arc",
       "combatStyle": "None"
-    }
+    },
+    {
+      "name": "Gawr Gura",
+      "species": "Human",
+      "affiliation": "None",
+      "role": "Minor Character",
+      "size": "Small",
+      "debut": "The Piss Bear: a Berserk 2 Side Story",
+      "combatStyle": "Pissing"
+    },
+    {
+      "name": "Alpha Bear",
+      "species": "Bear",
+      "affiliation": "The Bears",
+      "role": "Antagonist",
+      "size": "Large",
+      "debut": "The Piss Bear: a Berserk 2 Side Story",
+      "combatStyle": "Melee"
+    },
+    {
+      "name": "The Soy Bears",
+      "species": "Bear",
+      "affiliation": "The Bears",
+      "role": "Antagonist",
+      "size": "Large",
+      "debut": "The Piss Bear: a Berserk 2 Side Story",
+      "combatStyle": "Melee"
+    },
   ]
 };
