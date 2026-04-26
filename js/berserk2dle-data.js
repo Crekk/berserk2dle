@@ -148,7 +148,7 @@ window.BERSERK2DLE_DATA = {
       "name": "Ishtar",
       "species": "Servant / Human",
       "affiliation": "None",
-      "role": "Minor Character",
+      "role": "Ally",
       "size": "Average",
       "debut": "The Mainland Arc",
       "combatStyle": "None"
@@ -191,7 +191,7 @@ window.BERSERK2DLE_DATA = {
     },
     {
       "name": "The V-Tubers",
-      "species": "Human",
+      "species": "V-Tuber",
       "affiliation": "Youtube",
       "role": "Minor Antagonist",
       "size": "Average",
@@ -263,7 +263,7 @@ window.BERSERK2DLE_DATA = {
     },
     {
       "name": "Doomslayer",
-      "species": "Human?",
+      "species": "Human",
       "affiliation": "None",
       "role": "Minor Character",
       "size": "Large Human",
@@ -326,7 +326,7 @@ window.BERSERK2DLE_DATA = {
     },
     {
       "name": "Boulder White",
-      "species": "Human",
+      "species": "Rock Person",
       "affiliation": "Moth Lab",
       "role": "Minor Character",
       "size": "Small",
@@ -367,7 +367,7 @@ window.BERSERK2DLE_DATA = {
       "role": "Minor Antagonist",
       "size": "Huge",
       "debut": "Chaos Arc",
-      "combatStyle": "Melee"
+      "combatStyle": "Long Range"
     },
     {
       "name": "Sakura Matou",
@@ -455,7 +455,7 @@ window.BERSERK2DLE_DATA = {
       "species": "Dog",
       "affiliation": "None",
       "role": "Ally",
-      "size": "Average",
+      "size": "Small",
       "debut": "The Mainland Arc",
       "combatStyle": "None"
     },
@@ -533,7 +533,7 @@ window.BERSERK2DLE_DATA = {
     },
     {
       "name": "Gawr Gura",
-      "species": "Human",
+      "species": "V-Tuber",
       "affiliation": "None",
       "role": "Minor Character",
       "size": "Small",
@@ -557,6 +557,51 @@ window.BERSERK2DLE_DATA = {
       "size": "Large",
       "debut": "The Piss Bear: a Berserk 2 Side Story",
       "combatStyle": "Melee"
+    },
+    {
+      "name": "The Sussogriffin",
+      "species": "Sussogriffin",
+      "affiliation": "None",
+      "role": "Minor Character",
+      "size": "Average",
+      "debut": "The Mainland Arc",
+      "combatStyle": "Melee"
+    },
+    {
+      "name": "Roadhog",
+      "species": "Human",
+      "affiliation": "None",
+      "role": "Minor Character",
+      "size": "Large",
+      "debut": "idk",
+      "combatStyle": "Long Range"
+    },
+    {
+      "name": "Beep",
+      "species": "Machine",
+      "affiliation": "The Rejects",
+      "role": "Minor Character",
+      "size": "average",
+      "debut": "idk",
+      "combatStyle": "None"
+    },
+    {
+      "name": "Chika Fujiwara",
+      "species": "Human",
+      "affiliation": "The Rejects",
+      "role": "Minor Character",
+      "size": "Small",
+      "debut": "idk",
+      "combatStyle": "None"
+    },
+    {
+      "name": "Daisy",
+      "species": "Bunny",
+      "affiliation": "The Rejects",
+      "role": "Minor Character",
+      "size": "Tiny",
+      "debut": "idk",
+      "combatStyle": "None"
     },
   ]
 };
