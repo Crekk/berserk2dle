@@ -2,7 +2,7 @@ window.BERSERK2DLE_DATA = {
   "meta": {
     "title": "Berserk2dle",
     "seedEpochUtc": "2026-01-01",
-    "characterCount": 55
+    "characterCount": 63
   },
   "rankings": {
     "size": {
@@ -43,7 +43,8 @@ window.BERSERK2DLE_DATA = {
       "role": "Main Character",
       "size": "Large Human",
       "debut": "Prologue",
-      "combatStyle": "Melee"
+      "combatStyle": "Melee",
+      "gender": "Male"
     },
     {
       "name": "Stug",
@@ -52,7 +53,8 @@ window.BERSERK2DLE_DATA = {
       "role": "Antagonist",
       "size": "Large Human",
       "debut": "The Evil Arc",
-      "combatStyle": "Unknown"
+      "combatStyle": "Unknown",
+      "gender": "Male"
     },
     {
       "name": "Goro Akechi",
@@ -61,7 +63,8 @@ window.BERSERK2DLE_DATA = {
       "role": "Minor Antagonist",
       "size": "Average",
       "debut": "The Evil Arc",
-      "combatStyle": "Melee"
+      "combatStyle": "Melee",
+      "gender": "Male"
     },
     {
       "name": "Heracross",
@@ -70,7 +73,8 @@ window.BERSERK2DLE_DATA = {
       "role": "Main Character",
       "size": "Small",
       "debut": "Prologue",
-      "combatStyle": "Pokemon Moves"
+      "combatStyle": "Pokemon Moves",
+      "gender": "Male"
     },
     {
       "name": "Pinsir",
@@ -79,7 +83,8 @@ window.BERSERK2DLE_DATA = {
       "role": "Ally",
       "size": "Small",
       "debut": "School Shooting Arc",
-      "combatStyle": "Pokemon Moves"
+      "combatStyle": "Pokemon Moves",
+      "gender": "Male"
     },
     {
       "name": "Hornet",
@@ -88,7 +93,8 @@ window.BERSERK2DLE_DATA = {
       "role": "Main Character",
       "size": "Tiny",
       "debut": "The Mainland Arc",
-      "combatStyle": "Melee"
+      "combatStyle": "Melee",
+      "gender": "Female"
     },
     {
       "name": "Rhinor",
@@ -97,7 +103,8 @@ window.BERSERK2DLE_DATA = {
       "role": "Main Character",
       "size": "Large",
       "debut": "The Mainland Arc",
-      "combatStyle": "None"
+      "combatStyle": "None",
+      "gender": "Male"
     },
     {
       "name": "Chaos Rhinor",
@@ -106,7 +113,8 @@ window.BERSERK2DLE_DATA = {
       "role": "Antagonist",
       "size": "Huge",
       "debut": "Chaos Arc",
-      "combatStyle": "Driving"
+      "combatStyle": "Driving",
+      "gender": "Male"
     },
     {
       "name": "Captain Hot",
@@ -115,7 +123,8 @@ window.BERSERK2DLE_DATA = {
       "role": "Antagonist",
       "size": "Large Human",
       "debut": "School Shooting Arc",
-      "combatStyle": "Mid-Range"
+      "combatStyle": "Mid-Range",
+      "gender": "Female"
     },
     {
       "name": "Kasumi Trans",
@@ -124,7 +133,8 @@ window.BERSERK2DLE_DATA = {
       "role": "Minor Character",
       "size": "Small",
       "debut": "Storm the Capitol Arc",
-      "combatStyle": "None"
+      "combatStyle": "None",
+      "gender": "Female"
     },
     {
       "name": "Evil Morty",
@@ -133,7 +143,8 @@ window.BERSERK2DLE_DATA = {
       "role": "Antagonist",
       "size": "Average",
       "debut": "Morty Festival Arc",
-      "combatStyle": "Underlings"
+      "combatStyle": "Underlings",
+      "gender": "Male"
     },
     {
       "name": "Morshu",
@@ -142,7 +153,8 @@ window.BERSERK2DLE_DATA = {
       "role": "Ally",
       "size": "Average",
       "debut": "The Mainland Arc",
-      "combatStyle": "None"
+      "combatStyle": "None",
+      "gender": "Male"
     },
     {
       "name": "Ishtar",
@@ -151,7 +163,8 @@ window.BERSERK2DLE_DATA = {
       "role": "Ally",
       "size": "Average",
       "debut": "The Mainland Arc",
-      "combatStyle": "None"
+      "combatStyle": "None",
+      "gender": "Female"
     },
     {
       "name": "Impostor",
@@ -160,7 +173,8 @@ window.BERSERK2DLE_DATA = {
       "role": "Antagonist",
       "size": "Small",
       "debut": "Impostor Arc",
-      "combatStyle": "Assassin"
+      "combatStyle": "Assassin",
+      "gender": "Unknown"
     },
     {
       "name": "Crewmate",
@@ -169,7 +183,8 @@ window.BERSERK2DLE_DATA = {
       "role": "Antagonist",
       "size": "Small",
       "debut": "Impostor Arc",
-      "combatStyle": "Assassin"
+      "combatStyle": "Assassin",
+      "gender": "Unknown"
     },
     {
       "name": "Norm",
@@ -178,7 +193,8 @@ window.BERSERK2DLE_DATA = {
       "role": "Minor Antagonist",
       "size": "Average",
       "debut": "The Mainland Arc",
-      "combatStyle": "None"
+      "combatStyle": "None",
+      "gender": "Unknown"
     },
     {
       "name": "Tower of Rebirth Jailer",
@@ -187,7 +203,8 @@ window.BERSERK2DLE_DATA = {
       "role": "Antagonist",
       "size": "Small",
       "debut": "Prologue",
-      "combatStyle": "Magic"
+      "combatStyle": "Magic",
+      "gender": "Male"
     },
     {
       "name": "The V-Tubers",
@@ -196,7 +213,8 @@ window.BERSERK2DLE_DATA = {
       "role": "Minor Antagonist",
       "size": "Average",
       "debut": "China Arc",
-      "combatStyle": "None"
+      "combatStyle": "None",
+      "gender": "Mixed"
     },
     {
       "name": "Ramlethal",
@@ -205,7 +223,8 @@ window.BERSERK2DLE_DATA = {
       "role": "Ally",
       "size": "Average",
       "debut": "Love Square Arc",
-      "combatStyle": "Melee"
+      "combatStyle": "Melee",
+      "gender": "Female"
     },
     {
       "name": "Puck",
@@ -214,7 +233,8 @@ window.BERSERK2DLE_DATA = {
       "role": "Antagonist",
       "size": "Tiny",
       "debut": "Prologue",
-      "combatStyle": "Underlings"
+      "combatStyle": "Underlings",
+      "gender": "Male"
     },
     {
       "name": "Donofist",
@@ -223,7 +243,8 @@ window.BERSERK2DLE_DATA = {
       "role": "Antagonist",
       "size": "Large Human",
       "debut": "Donofist Arc",
-      "combatStyle": "Underlings"
+      "combatStyle": "Underlings",
+      "gender": "Male"
     },
     {
       "name": "Car from Rocket League",
@@ -232,7 +253,8 @@ window.BERSERK2DLE_DATA = {
       "role": "Ally",
       "size": "Large",
       "debut": "Chaos Arc",
-      "combatStyle": "Driving"
+      "combatStyle": "Driving",
+      "gender": "Non-Binary"
     },
     {
       "name": "Trench Craventail",
@@ -241,7 +263,8 @@ window.BERSERK2DLE_DATA = {
       "role": "Minor Antagonist",
       "size": "Small",
       "debut": "School Shooting Arc",
-      "combatStyle": "Long Range"
+      "combatStyle": "Long Range",
+      "gender": "Male"
     },
     {
       "name": "Neko-Arc",
@@ -250,7 +273,8 @@ window.BERSERK2DLE_DATA = {
       "role": "Minor Antagonist",
       "size": "Very Small",
       "debut": "School Shooting Arc",
-      "combatStyle": "Melee"
+      "combatStyle": "Melee",
+      "gender": "Female"
     },
     {
       "name": "Jessie",
@@ -259,7 +283,8 @@ window.BERSERK2DLE_DATA = {
       "role": "Minor Antagonist",
       "size": "Average",
       "debut": "School Shooting Arc",
-      "combatStyle": "None"
+      "combatStyle": "None",
+      "gender": "Female"
     },
     {
       "name": "Doomslayer",
@@ -268,16 +293,18 @@ window.BERSERK2DLE_DATA = {
       "role": "Minor Character",
       "size": "Large Human",
       "debut": "The Mainland Arc",
-      "combatStyle": "Mid-Range"
+      "combatStyle": "Mid-Range",
+      "gender": "Male"
     },
     {
-      "name": "Jeanne d\u2019Arc",
+      "name": "Jeanne d’Arc",
       "species": "Servant / Human",
       "affiliation": "None",
       "role": "Minor Character",
       "size": "Average",
       "debut": "The Mainland Arc",
-      "combatStyle": "Magic"
+      "combatStyle": "Magic",
+      "gender": "Female"
     },
     {
       "name": "Crustle",
@@ -286,7 +313,8 @@ window.BERSERK2DLE_DATA = {
       "role": "Minor Character",
       "size": "Small",
       "debut": "The Piss Bear: a Berserk 2 Side Story",
-      "combatStyle": "Pokemon Moves / Pissing"
+      "combatStyle": "Pokemon Moves / Pissing",
+      "gender": "Unknown"
     },
     {
       "name": "Big Chungus",
@@ -295,7 +323,8 @@ window.BERSERK2DLE_DATA = {
       "role": "Ally",
       "size": "Massive",
       "debut": "The Mainland Arc",
-      "combatStyle": "Chung-Fu"
+      "combatStyle": "Chung-Fu",
+      "gender": "Male"
     },
     {
       "name": "Illyasviel von Einzbern",
@@ -304,7 +333,8 @@ window.BERSERK2DLE_DATA = {
       "role": "Antagonist",
       "size": "Small",
       "debut": "Chungling Arc",
-      "combatStyle": "Underlings"
+      "combatStyle": "Underlings",
+      "gender": "Female"
     },
     {
       "name": "The Chungi",
@@ -313,7 +343,8 @@ window.BERSERK2DLE_DATA = {
       "role": "Antagonist",
       "size": "Massive",
       "debut": "Chungling Arc",
-      "combatStyle": "Chung-Fu"
+      "combatStyle": "Chung-Fu",
+      "gender": "Male"
     },
     {
       "name": "Big Gutsus",
@@ -322,7 +353,8 @@ window.BERSERK2DLE_DATA = {
       "role": "Main Character",
       "size": "Massive",
       "debut": "Chungling Arc",
-      "combatStyle": "Melee"
+      "combatStyle": "Melee",
+      "gender": "Male"
     },
     {
       "name": "Boulder White",
@@ -331,7 +363,8 @@ window.BERSERK2DLE_DATA = {
       "role": "Minor Character",
       "size": "Small",
       "debut": "Clash of Bugs Arc",
-      "combatStyle": "None"
+      "combatStyle": "None",
+      "gender": "Male"
     },
     {
       "name": "Mr. Bugs",
@@ -340,7 +373,8 @@ window.BERSERK2DLE_DATA = {
       "role": "Minor Character",
       "size": "Small",
       "debut": "Clash of Bugs Arc",
-      "combatStyle": "None"
+      "combatStyle": "None",
+      "gender": "Male"
     },
     {
       "name": "Emiya Shirou",
@@ -349,7 +383,8 @@ window.BERSERK2DLE_DATA = {
       "role": "Minor Character",
       "size": "Average",
       "debut": "Clash of Bugs Arc",
-      "combatStyle": "None"
+      "combatStyle": "None",
+      "gender": "Male"
     },
     {
       "name": "Godfrey",
@@ -358,7 +393,8 @@ window.BERSERK2DLE_DATA = {
       "role": "Minor Character",
       "size": "Very Small",
       "debut": "Idk",
-      "combatStyle": "Dancing"
+      "combatStyle": "Dancing",
+      "gender": "Male"
     },
     {
       "name": "The Dreadnought",
@@ -367,7 +403,8 @@ window.BERSERK2DLE_DATA = {
       "role": "Minor Antagonist",
       "size": "Huge",
       "debut": "Chaos Arc",
-      "combatStyle": "Long Range"
+      "combatStyle": "Long Range",
+      "gender": "Unknown"
     },
     {
       "name": "Sakura Matou",
@@ -376,7 +413,8 @@ window.BERSERK2DLE_DATA = {
       "role": "Minor Antagonist",
       "size": "Average",
       "debut": "Chaos Arc",
-      "combatStyle": "Magic"
+      "combatStyle": "Magic",
+      "gender": "Female"
     },
     {
       "name": "Power",
@@ -385,7 +423,8 @@ window.BERSERK2DLE_DATA = {
       "role": "Minor Antagonist",
       "size": "Average",
       "debut": "Storm the Capitol Arc",
-      "combatStyle": "Driving"
+      "combatStyle": "Driving",
+      "gender": "Female"
     },
     {
       "name": "Kobeni",
@@ -394,7 +433,8 @@ window.BERSERK2DLE_DATA = {
       "role": "Minor Antagonist",
       "size": "Small",
       "debut": "Storm the Capitol Arc",
-      "combatStyle": "Driving"
+      "combatStyle": "Driving",
+      "gender": "Female"
     },
     {
       "name": "Pochita",
@@ -403,7 +443,8 @@ window.BERSERK2DLE_DATA = {
       "role": "Ally",
       "size": "Very Small",
       "debut": "China Arc",
-      "combatStyle": "Melee"
+      "combatStyle": "Melee",
+      "gender": "Male"
     },
     {
       "name": "Regirock",
@@ -412,7 +453,8 @@ window.BERSERK2DLE_DATA = {
       "role": "Minor Character",
       "size": "Average",
       "debut": "Idk",
-      "combatStyle": "Pokemon Moves"
+      "combatStyle": "Pokemon Moves",
+      "gender": "Unknown"
     },
     {
       "name": "Evil Mr. Beast",
@@ -421,7 +463,8 @@ window.BERSERK2DLE_DATA = {
       "role": "Minor Antagonist",
       "size": "Average",
       "debut": "The Evil Arc",
-      "combatStyle": "Underlings"
+      "combatStyle": "Underlings",
+      "gender": "Male"
     },
     {
       "name": "Mr. Evil Beast",
@@ -430,7 +473,8 @@ window.BERSERK2DLE_DATA = {
       "role": "Minor Antagonist",
       "size": "Large",
       "debut": "The Evil Arc",
-      "combatStyle": "Melee"
+      "combatStyle": "Melee",
+      "gender": "Unknown"
     },
     {
       "name": "Bear5",
@@ -439,7 +483,8 @@ window.BERSERK2DLE_DATA = {
       "role": "Minor Antagonist",
       "size": "Large Human",
       "debut": "The Evil Arc",
-      "combatStyle": "Assassin"
+      "combatStyle": "Assassin",
+      "gender": "Unknown"
     },
     {
       "name": "The Dwarves",
@@ -448,7 +493,8 @@ window.BERSERK2DLE_DATA = {
       "role": "Ally",
       "size": "Microscopic",
       "debut": "The Mainland Arc",
-      "combatStyle": "None"
+      "combatStyle": "None",
+      "gender": "Mixed"
     },
     {
       "name": "James Workshop",
@@ -457,7 +503,8 @@ window.BERSERK2DLE_DATA = {
       "role": "Ally",
       "size": "Small",
       "debut": "The Mainland Arc",
-      "combatStyle": "None"
+      "combatStyle": "None",
+      "gender": "Male"
     },
     {
       "name": "Grog of Death",
@@ -466,7 +513,8 @@ window.BERSERK2DLE_DATA = {
       "role": "Ally",
       "size": "Large",
       "debut": "Chaos Arc",
-      "combatStyle": "Driving"
+      "combatStyle": "Driving",
+      "gender": "Non-Binary"
     },
     {
       "name": "Dragonite",
@@ -475,7 +523,8 @@ window.BERSERK2DLE_DATA = {
       "role": "Minor Character",
       "size": "Average",
       "debut": "Idk",
-      "combatStyle": "Dancing"
+      "combatStyle": "Dancing",
+      "gender": "Male"
     },
     {
       "name": "Chudlizard",
@@ -484,7 +533,8 @@ window.BERSERK2DLE_DATA = {
       "role": "Minor Character",
       "size": "Average",
       "debut": "Idk",
-      "combatStyle": "Dancing"
+      "combatStyle": "Dancing",
+      "gender": "Male"
     },
     {
       "name": "Tyranitar",
@@ -493,7 +543,8 @@ window.BERSERK2DLE_DATA = {
       "role": "Minor Character",
       "size": "Average",
       "debut": "Idk",
-      "combatStyle": "Dancing"
+      "combatStyle": "Dancing",
+      "gender": "Male"
     },
     {
       "name": "Flygon",
@@ -502,7 +553,8 @@ window.BERSERK2DLE_DATA = {
       "role": "Minor Character",
       "size": "Small",
       "debut": "Idk",
-      "combatStyle": "Dancing"
+      "combatStyle": "Dancing",
+      "gender": "Male"
     },
     {
       "name": "Whiscash",
@@ -511,7 +563,8 @@ window.BERSERK2DLE_DATA = {
       "role": "Minor Character",
       "size": "Small",
       "debut": "Idk",
-      "combatStyle": "Dancing"
+      "combatStyle": "Dancing",
+      "gender": "Male"
     },
     {
       "name": "Creeper",
@@ -520,7 +573,8 @@ window.BERSERK2DLE_DATA = {
       "role": "Minor Antagonist",
       "size": "Average",
       "debut": "School Shooting Arc",
-      "combatStyle": "Suicide"
+      "combatStyle": "Suicide",
+      "gender": "Mixed"
     },
     {
       "name": "Bulba-Chan",
@@ -529,7 +583,8 @@ window.BERSERK2DLE_DATA = {
       "role": "Ally",
       "size": "Small",
       "debut": "Love Square Arc",
-      "combatStyle": "None"
+      "combatStyle": "None",
+      "gender": "Female"
     },
     {
       "name": "Gawr Gura",
@@ -538,7 +593,8 @@ window.BERSERK2DLE_DATA = {
       "role": "Minor Character",
       "size": "Small",
       "debut": "The Piss Bear: a Berserk 2 Side Story",
-      "combatStyle": "Pissing"
+      "combatStyle": "Pissing",
+      "gender": "Female"
     },
     {
       "name": "Alpha Bear",
@@ -547,7 +603,8 @@ window.BERSERK2DLE_DATA = {
       "role": "Antagonist",
       "size": "Large",
       "debut": "The Piss Bear: a Berserk 2 Side Story",
-      "combatStyle": "Melee"
+      "combatStyle": "Melee",
+      "gender": "Male"
     },
     {
       "name": "The Soy Bears",
@@ -556,7 +613,8 @@ window.BERSERK2DLE_DATA = {
       "role": "Minor Antagonist",
       "size": "Large",
       "debut": "The Piss Bear: a Berserk 2 Side Story",
-      "combatStyle": "Melee"
+      "combatStyle": "Melee",
+      "gender": "Male"
     },
     {
       "name": "The Sussogriffin",
@@ -565,7 +623,8 @@ window.BERSERK2DLE_DATA = {
       "role": "Minor Character",
       "size": "Average",
       "debut": "The Mainland Arc",
-      "combatStyle": "Melee"
+      "combatStyle": "Melee",
+      "gender": "Mixed"
     },
     {
       "name": "Roadhog",
@@ -573,8 +632,9 @@ window.BERSERK2DLE_DATA = {
       "affiliation": "None",
       "role": "Minor Character",
       "size": "Large",
-      "debut": "idk",
-      "combatStyle": "Long Range"
+      "debut": "Idk",
+      "combatStyle": "Long Range",
+      "gender": "Male"
     },
     {
       "name": "Beep",
@@ -582,8 +642,9 @@ window.BERSERK2DLE_DATA = {
       "affiliation": "The Rejects",
       "role": "Minor Character",
       "size": "average",
-      "debut": "idk",
-      "combatStyle": "None"
+      "debut": "Idk",
+      "combatStyle": "None",
+      "gender": "Unknown"
     },
     {
       "name": "Chika Fujiwara",
@@ -591,8 +652,9 @@ window.BERSERK2DLE_DATA = {
       "affiliation": "The Rejects",
       "role": "Minor Character",
       "size": "Small",
-      "debut": "idk",
-      "combatStyle": "None"
+      "debut": "Idk",
+      "combatStyle": "None",
+      "gender": "Female"
     },
     {
       "name": "Daisy",
@@ -600,8 +662,9 @@ window.BERSERK2DLE_DATA = {
       "affiliation": "The Rejects",
       "role": "Minor Character",
       "size": "Tiny",
-      "debut": "idk",
-      "combatStyle": "None"
-    },
+      "debut": "Idk",
+      "combatStyle": "None",
+      "gender": "Female"
+    }
   ]
 };

@@ -255,7 +255,7 @@ button:hover {
 
 .board-row {
   display: grid;
-  grid-template-columns: repeat(7, 148px);
+  grid-template-columns: repeat(8, 130px);
   gap: 8px;
   width: max-content;
 }
@@ -265,7 +265,7 @@ button:hover {
   background: #fff;
   border-radius: 6px;
   padding: 8px;
-  min-height: 148px;
+  min-height: 130px;
   display: flex;
   align-items: center;
   justify-content: center;

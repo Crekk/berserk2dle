@@ -6,6 +6,7 @@
 
   const TRAITS = [
     { key: "species", label: "Species" },
+    { key: "gender", label: "Gender", exactOnly: true },
     { key: "affiliation", label: "Affiliation" },
     { key: "role", label: "Role" },
     { key: "size", label: "Size", ordered: true, ranking: SIZE_ORDER },
@@ -691,6 +692,10 @@
 
     if (guessNorm === targetNorm) {
       return { state: "exact", arrow: "" };
+    }
+
+    if (trait.exactOnly) {
+      return { state: "none", arrow: "" };
     }
 
     const guessVariants = splitVariants(guessValue);
