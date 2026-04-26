@@ -2,7 +2,7 @@ window.BERSERK2DLE_DATA = {
   "meta": {
     "title": "Berserk2dle",
     "seedEpochUtc": "2026-01-01",
-    "characterCount": 55
+    "characterCount": 63
   },
   "rankings": {
     "size": {
@@ -573,7 +573,7 @@ window.BERSERK2DLE_DATA = {
       "affiliation": "None",
       "role": "Minor Character",
       "size": "Large",
-      "debut": "idk",
+      "debut": "Idk",
       "combatStyle": "Long Range"
     },
     {
@@ -582,7 +582,7 @@ window.BERSERK2DLE_DATA = {
       "affiliation": "The Rejects",
       "role": "Minor Character",
       "size": "average",
-      "debut": "idk",
+      "debut": "Idk",
       "combatStyle": "None"
     },
     {
@@ -591,7 +591,7 @@ window.BERSERK2DLE_DATA = {
       "affiliation": "The Rejects",
       "role": "Minor Character",
       "size": "Small",
-      "debut": "idk",
+      "debut": "Idk",
       "combatStyle": "None"
     },
     {
@@ -600,7 +600,7 @@ window.BERSERK2DLE_DATA = {
       "affiliation": "The Rejects",
       "role": "Minor Character",
       "size": "Tiny",
-      "debut": "idk",
+      "debut": "Idk",
       "combatStyle": "None"
     },
   ]
