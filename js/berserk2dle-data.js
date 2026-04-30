@@ -314,7 +314,7 @@ window.BERSERK2DLE_DATA = {
       "size": "Small",
       "debut": "The Piss Bear: a Berserk 2 Side Story",
       "combatStyle": "Pokemon Moves / Pissing",
-      "gender": "Unknown"
+      "gender": "Male"
     },
     {
       "name": "Big Chungus",
@@ -638,10 +638,10 @@ window.BERSERK2DLE_DATA = {
     },
     {
       "name": "Beep",
-      "species": "Machine",
+      "species": "Hiver",
       "affiliation": "The Rejects",
       "role": "Minor Character",
-      "size": "average",
+      "size": "Average",
       "debut": "Idk",
       "combatStyle": "None",
       "gender": "Unknown"
